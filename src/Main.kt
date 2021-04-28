@@ -1,7 +1,9 @@
-import SyntaxRegExp.getSintaxRotulate
+import SyntaxType.Companion.getSyntaxLabel
 import java.io.File
 
 // Feito por: Arthur Lima e Vinicius Hoffmann
+
+//C:\Users\souza.arthur\Documents\my-projects\rotulador\src\fazer_leitura.php
 
 fun main() {
 
@@ -9,16 +11,15 @@ fun main() {
     println("======== ROTULADOR PHP ==========")
     println("=================================")
 
-    println("Digite o caminho do arquivo PHP que deseja fazer a leitura (Exemplo: C:\\Users\\arthur\\arquivo.php): ")
+    println("Digite o caminho do arquivo PHP que deseja fazer a leitura (Exemplo: C:\\Users\\souza.arthur\\Documents\\my-projects\\rotulador\\src\\arquivo.php): ")
     val filePath = readLine()
-    //val filePath = "C:\\Users\\souza.arthur\\Documents\\my-projects\\rotulador\\src\\fazer_leitura.php"
 
     try {
         var lineNumber = 0
 
         File(filePath).forEachLine { line ->
             lineNumber++
-            println("Linha $lineNumber: ${getSintaxRotulate(line).description}")
+            println("Linha $lineNumber: ${getSyntaxLabel(line).description}")
         }
 
     } catch (ex: Exception) {
